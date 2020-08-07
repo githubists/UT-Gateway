@@ -1,0 +1,26 @@
+{
+  "name": "UT-Gateway",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Google Chromeで東京大学のSSL-VPN GatewayサービスURLにリダイレクトする拡張機能です",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/icon48.png",
+    "default_title": "UT-Gateway"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["script.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs"]
+}
